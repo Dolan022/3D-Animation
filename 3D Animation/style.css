@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #181717;
+    height: 100vh;
+}
+
+#box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#warpar {
+    height: 250px;
+    width: 250px;
+    position: relative;
+}
+
+.conter {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 800px;
+    perspective-origin: 50%;
+}
+
+.img-cube {
+    width: 250px;
+    height: 250px;
+    transform-style: preserve-3d;
+    position: relative;
+    animation: move 20s linear infinite;
+}
+
+@keyframes move {
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.img-cube div {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+img {
+    width: 100%;
+}
+
+.font {
+    transform: translateZ(125px);
+}
+
+.right {
+    transform: rotateY(-270deg) translateX(125px);
+    transform-origin: 100% 0;
+}
+
+.back {
+    transform: translateZ(-125px) rotateY(180deg);
+}
+
+.left {
+    transform: rotateY(270deg) translateX(-125px);
+    transform-origin: 0 50%;
+}
