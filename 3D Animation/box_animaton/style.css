@@ -1,0 +1,131 @@
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        perspective: 580px;
+        transition: all 0.5s;
+        background-color: lightblue;
+    }
+    
+    .wrapper {
+        margin-top: 200px;
+        perspective: 1000px;
+        perspective-origin: 50% 50%;
+    }
+    
+    .cube {
+        margin: auto;
+        position: relative;
+        height: 200px;
+        width: 200px;
+        transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+    }
+    
+    .cube div {
+        position: absolute;
+        box-sizing: border-box;
+        padding: 10px;
+        height: 100%;
+        width: 100%;
+        opacity: 0.9;
+    }
+    
+    @keyframes rotate {
+        from {
+            transform: rotateX(0deg) rotateY(0deg);
+            -ms-transform: rotateX(0deg) rotateY(0deg);
+            -webkit-transform: rotateX(0deg) rotateY(0deg);
+        }
+        to {
+            transform: rotateX(360deg) rotateY(360deg);
+            -ms-transform: rotateX(360deg) rotateY(360deg);
+            -webkit-transform: rotateX(360deg) rotateY(360deg);
+        }
+    }
+    
+    @-webkit-keyframes rotate {
+        from {
+            transform: rotateX(0deg) rotateY(0deg);
+            -ms-transform: rotateX(0deg) rotateY(0deg);
+            -webkit-transform: rotateX(0deg) rotateY(0deg);
+        }
+        to {
+            transform: rotateX(360deg) rotateY(360deg);
+            -ms-transform: rotateX(360deg) rotateY(360deg);
+            -webkit-transform: rotateX(360deg) rotateY(360deg);
+        }
+    }
+    
+    .cube {
+        animation: rotate 20s infinite linear;
+        -webkit-animation: rotate 20s infinite linear;
+    }
+    
+    .front-side {
+        background-image: url(./img1/pc1.jpg);
+        height: 200px;
+        width: 200px;
+        transform: translateZ(100px);
+        -ms-transform: translateZ(100px);
+        -webkit-transform: translateZ(100px);
+    }
+    
+    .back-side {
+        background-image: url(./img1/pc2.jpg);
+        height: 200px;
+        width: 200px;
+        transform: translateZ(-100px) rotateY(180deg);
+        -webkit-transform: translateZ(-100px) rotateY(180deg);
+        -ms-transform: translateZ(-100px) rotateY(180deg);
+    }
+    
+    .left-side {
+        background-image: url(./img1/pc3.jpg);
+        height: 200px;
+        width: 200px;
+        transform: rotateY(270deg) translateX(-100px);
+        -webkit-transform: rotateY(270deg) translateX(-100px);
+        -ms-transform: rotateY(270deg) translateX(-100px);
+        transform-origin: center left;
+        -ms-transform-origin: center left;
+        -webkit-transform-origin: center left;
+    }
+    
+    .right-side {
+        background-image: url(./img1/pc4.jpg);
+        height: 200px;
+        width: 200px;
+        transform: rotateY(-270deg) translateX(100px);
+        -ms-transform: rotateY(-270deg) translateX(100px);
+        -webkit-transform: rotateY(-270deg) translateX(100px);
+        transform-origin: top right;
+        -ms-transform-origin: top right;
+        -webkit-transform-origin: top right;
+    }
+    
+    .top-side {
+        background-image: url(./img1/pc5.jpg);
+        height: 200px;
+        width: 200px;
+        transform: rotateX(-270deg) translateY(-100px);
+        -webkit-transform: rotateX(-270deg) translateY(-100px);
+        -ms-transform: rotateX(-270deg) translateY(-100px);
+        transform-origin: top center;
+        -ms-transform-origin: top center;
+        -webkit-transform-origin: top center;
+    }
+    
+    .bottom-side {
+        background-image: url(./img1/pc6.jpg);
+        height: 200px;
+        width: 200px;
+        transform: rotateX(270deg) translateY(100px);
+        -webkit-transform: rotateX(270deg) translateY(100px);
+        -ms-transform: rotateX(270deg) translateY(100px);
+        transform-origin: bottom center;
+        -ms-transform-origin: bottom center;
+        -webkit-transform-origin: bottom center;
+    }
